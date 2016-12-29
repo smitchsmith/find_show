@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  host: localhost
+  database: find_show_development
+
+test:
+  adapter: postgresql
+  host: localhost
+  database: find_show_test

@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'oh_my_rockness', git: 'https://github.com/smitchsmith/oh_my_rockness.git'
+gem 'rspotify'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -4,6 +4,9 @@ class User < ApplicationRecord
          :confirmable, :omniauthable, :timeoutable,
          omniauth_providers: [:spotify]
 
+  has_many :user_artists
+  has_many :artists, through: :user_artists
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email    = auth.info.email

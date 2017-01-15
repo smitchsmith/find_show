@@ -1,4 +1,4 @@
-class UserArtist < ActiveRecord::Base
+class UserArtist < ApplicationRecord
   belongs_to :user
   belongs_to :artist
 

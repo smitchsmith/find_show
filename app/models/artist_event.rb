@@ -1,4 +1,4 @@
-class ArtistEvent < ActiveRecord::Base
+class ArtistEvent < ApplicationRecord
   belongs_to :artist
   belongs_to :event
 

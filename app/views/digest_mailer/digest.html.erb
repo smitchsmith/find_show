@@ -1,0 +1,7 @@
+<h1>Findshow!</h1>
+
+<h2>Upcoming Shows</h2>
+<%= render "events/table", events: @digest.upcoming_events %>
+
+<h2>New Shows</h2>
+<%= render "events/table", events: @digest.new_events %>

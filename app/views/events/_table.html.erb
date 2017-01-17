@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Artists</th>
+      <th>Venue</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% events.each do |event| %>
+      <tr>
+        <td><%= event.date.strftime("%b %d (%I:%M %p)") %></td>
+        <td><%= event.artist_names.join(", ") %></td>
+        <td><%= event.venue_name %></td>
+        <td><%= event.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

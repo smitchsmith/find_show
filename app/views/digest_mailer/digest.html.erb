@@ -1,0 +1,15 @@
+<h1>Findshow!</h1>
+
+<h2>Upcoming Shows</h2>
+<% if @digest.upcoming_events.present? %>
+  <%= render "events/table", events: @digest.upcoming_events %>
+<% else %>
+  <p>No upcoming shows this week :(</p>
+<% end %>
+
+<h2>New Shows</h2>
+<% if @digest.new_events.present? %>
+  <%= render "events/table", events: @digest.new_events %>
+<% else %>
+  <p>No new shows this week. Try following more artists!</p>
+<% end %>

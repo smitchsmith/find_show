@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def spotify_client
     @spotify_client ||= SpotifyClient.new(self)
   end
+
+  def followed_artist_events
+    Event.joins(:artist_events).where("artist_events.artist_id IN (?)", artist_ids).uniq
+  end
 end

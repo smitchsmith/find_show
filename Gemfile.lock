@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/smitchsmith/oh_my_rockness.git
-  revision: aea9978254a801a510d5a98ccd710f1495b0026f
+  revision: 37e03d37a61b5986a58c055df8bc192f44b5c6bc
   specs:
     oh_my_rockness (0.0.1)
       capybara

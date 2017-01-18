@@ -1,18 +1,22 @@
 require 'rails_helper'
 
-describe OhMyRocknessImporter do
+describe Sync::OhMyRockness do
   context '.import' do
     let(:data) do
       {
         date:    "2016-12-28T20:00:00-05:00",
-        artists: ["Band", "Band"],
+        artists: [
+          {name: "Band", order: 1},
+          {name: "Band", order: 2}
+        ],
         venue:   {name: "Outside", link: "foo.com"},
-        cost:    "Free"
+        cost:    "Free",
+        tickets_url: "google.com"
       }
     end
 
     before do
-      allow_any_instance_of(OhMyRockness::Index).to receive(:scrape)
+      allow_any_instance_of(::OhMyRockness::Index).to receive(:scrape)
         .and_return([data])
     end
 

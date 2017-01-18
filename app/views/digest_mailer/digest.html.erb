@@ -13,3 +13,5 @@
 <% else %>
   <p>No new shows this week. Try following more artists!</p>
 <% end %>
+
+<p><%= link_to "Unsubscribe", unsubscribe_user_url(@digest.user.hashed_id) %></p>

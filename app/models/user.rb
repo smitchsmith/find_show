@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   serialize :spotify_data, Hash
 
+  before_save :set_hashed_id
+
   has_many :user_artists, dependent: :destroy
   has_many :artists, through: :user_artists
 
@@ -19,11 +21,21 @@ class User < ApplicationRecord
     end
   end
 
+  def self.subscribed
+    where(subscribed: true)
+  end
+
   def spotify_client
     @spotify_client ||= SpotifyClient.new(self)
   end
 
   def followed_artist_events
     Event.joins(:artist_events).where("artist_events.artist_id IN (?)", artist_ids).uniq
+  end
+
+  private
+
+  def set_hashed_id
+    self.hashed_id = Digest::MD5.hexdigest(id.to_s) if hashed_id.blank?
   end
 end

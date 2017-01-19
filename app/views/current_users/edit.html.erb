@@ -1,0 +1,7 @@
+<%= simple_form_for [:current, @user] do |f| %>
+  <%= render "form", :f => f %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     get :unsubscribe, on: :member
   end
+
+  resource :current_user, :only => [:show, :edit, :update], path: "account"
 end

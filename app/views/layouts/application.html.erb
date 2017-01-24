@@ -13,17 +13,17 @@
       <header>
         <div class="grid">
           <div class="cell -6of12">
-            <h1><%= link_to "findshow", root_url %></h1>
+            <h1><%= link_to "findshow", artists_path %></h1>
           </div>
           <div class="cell -6of12">
-            <%= link_to image_tag("iconmonstr-menu-1.svg", class: "settings"), current_user_path %>
+            <% if user_signed_in? %>
+              <%= link_to image_tag(:hamburger, class: :settings), current_user_path %>
+            <% end %>
           </div>
         </div>
       </header>
 
-      <div class="grid">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </body>
 </html>

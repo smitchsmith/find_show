@@ -1,0 +1,13 @@
+<div class="grid -center">
+  <div class="cell -12of12">
+    <div class="callout">
+      <p class="concert"><%= image_tag :concert %></p>
+      <p>Get weekly updates on shows in NYC by artists you're interested in.</p>
+      
+      <p class="spotify">
+        <%= link_to "Sign in with Spotify", omniauth_authorize_path(:user, :spotify) %><br>
+        <%= image_tag :spotify %><br>
+      </p>
+    </div>
+  </div>
+</div>

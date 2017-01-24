@@ -1,0 +1,15 @@
+header {
+  h1 a {
+    color: black;
+    border-bottom: 0;
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  .settings {
+    float: right;
+    margin-top: 10px;
+  }
+}

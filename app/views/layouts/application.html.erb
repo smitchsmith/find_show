@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <div class="grid">
+          <div class="cell -6of12">
+            <h1><%= link_to "findshow", root_url %></h1>
+          </div>
+          <div class="cell -6of12">
+            <%= link_to image_tag("iconmonstr-menu-1.svg", class: "settings"), current_user_path %>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,9 +1,11 @@
-<%= simple_form_for [:current, @user] do |f| %>
+<h3 class="page-header">Settings</h3>
+
+<%= simple_form_for @user, url: current_user_path do |f| %>
   <%= render "form", :f => f %>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-success" %>
   </div>
 <% end %>
 
-<%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-error sign-out" %>

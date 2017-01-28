@@ -1,0 +1,21 @@
+<% content_for(:header_title, "Welcome to findshow!") %>
+
+<div class="grid -center welcome-grid">
+  <div class="cell -12of12">
+    <p>
+      The website is currently under construction, but you can look forward to a weekly digest with:
+    </p>
+    <ul>
+      <li>Shows in the next week for artists you follow</li>
+      <li>New shows on the calendar for artists you follow</li>
+      <li>More to come!</li>
+    </ul>
+    <p>
+      Otherwise, change your settings <%= link_to "here", current_user_path %> or using the menu icon.
+    </p>
+    <p>
+      Email support@findshow.xyz with any questions!
+    </p>
+    <p class="callout-image"><%= image_tag :welcome_on_board %></p>
+  </div>
+</div>

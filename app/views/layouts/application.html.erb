@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FindShow</title>
+    <title>findshow</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +13,7 @@
       <header>
         <div class="grid">
           <div class="cell -6of12">
-            <h1><%= link_to "findshow", artists_path %></h1>
+            <h1><%= link_to (content_for?(:header_title) ? content_for(:header_title) : "findshow"), welcome_path %></h1>
           </div>
           <div class="cell -6of12">
             <% if user_signed_in? %>

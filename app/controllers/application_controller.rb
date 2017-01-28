@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope) # needed since devise route set to root
-    artists_path
+    welcome_path
   end
 end

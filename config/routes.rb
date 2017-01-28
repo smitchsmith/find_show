@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resource :current_user, :only => [:show, :edit, :update], path: "account"
 
-  resources :artists, only: :index
+  get "welcome", :to => "welcome#show"
 end

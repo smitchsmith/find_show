@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
 
   def followed_artist_events
-    Event.joins(:artist_events).where("artist_events.artist_id IN (?)", artist_ids).uniq
+    Event.joins(:artist_events).where("artist_events.artist_id IN (?)", artist_ids).distinct
   end
 
   private

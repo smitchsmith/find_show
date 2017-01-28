@@ -5,6 +5,10 @@ class Event < ApplicationRecord
 
   delegate :name, to: :venue, prefix: true
 
+  def self.ordered
+    order(:date)
+  end
+
   def add_artist_with_order(artist, order)
     artist_event = artist_events.find_or_create_by!(artist_id: artist.id)
     artist_event.update_attribute(:order, order) unless artist_event.order == order

@@ -1,24 +1,17 @@
-# README
+# findshow
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Get weekly updates on shows in NYC by artists you're interested in.
 
-Things you may want to cover:
+### Currently
 
-* Ruby version
+- [x] Upcoming shows: Everything happening in the next week
+- [x] New shows: All shows announced in the past week
 
-* System dependencies
+### Coming soon
 
-* Configuration
+- [ ] New song / album releases by artists you follow
+- [ ] Trending shows
+- [ ] Shows from bands you may like (based on your interests)
+- [ ] Web Interface: Event listings, follow / unfollow artists + events, and more
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+by Mitchell Smith

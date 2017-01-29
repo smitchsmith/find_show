@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( hack-0.5.0.css digest_mailer.css )
+Rails.application.config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif *.svg )

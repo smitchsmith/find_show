@@ -7,3 +7,10 @@ test:
   adapter: postgresql
   host: localhost
   database: find_show_test
+
+production:
+  adapter: postgresql
+  host: <%= Rails.application.secrets.psql_ip %>
+  database: find_show_production
+  username: app
+  password: <%= Rails.application.secrets.psql_password %>

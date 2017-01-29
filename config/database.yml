@@ -7,3 +7,8 @@ test:
   adapter: postgresql
   host: localhost
   database: find_show_test
+
+production:
+  adapter: postgresql
+  host: localhost
+  database: find_show_production

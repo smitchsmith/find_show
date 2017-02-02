@@ -11,6 +11,17 @@ RUN bash -lc 'rvm install ruby-2.4.0-rc1'
 RUN bash -lc 'rvm --default use ruby-2.4.0'
 RUN /pd_build/redis.sh
 
+# phantomjs # https://gist.github.com/julionc/7476620
+RUN apt-get update
+RUN apt-get -y install build-essential chrpath libssl-dev libxft-dev
+RUN apt-get -y install libfreetype6 libfreetype6-dev
+RUN apt-get -y install libfontconfig1 libfontconfig1-dev
+WORKDIR /tmp
+RUN curl --silent -L -o phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+RUN tar xvjf phantomjs.tar.bz2
+RUN mv phantomjs.tar.bz2 /usr/local/share
+RUN ln -sf /usr/local/share/phantomjs.tar.bz2/bin/phantomjs /usr/local/bin
+
 # gems
 RUN mkdir -p /home/app/findshow
 WORKDIR /home/app/findshow

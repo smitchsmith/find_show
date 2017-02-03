@@ -1,5 +1,9 @@
 module Sync
   class Spotify < Struct.new(:user)
+    def self.sync
+      User.subscribed.find_each { |user| new(user).sync }
+    end
+
     def sync(destructive = false)
       if destructive
         user.artists = playlist_artists

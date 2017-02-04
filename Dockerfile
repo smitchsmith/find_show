@@ -17,10 +17,10 @@ RUN apt-get -y install build-essential chrpath libssl-dev libxft-dev
 RUN apt-get -y install libfreetype6 libfreetype6-dev
 RUN apt-get -y install libfontconfig1 libfontconfig1-dev
 WORKDIR /tmp
-RUN curl --silent -L -o phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+RUN curl --silent -L -o phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN tar xvjf phantomjs.tar.bz2
-RUN mv phantomjs.tar.bz2 /usr/local/share
-RUN ln -sf /usr/local/share/phantomjs.tar.bz2/bin/phantomjs /usr/local/bin
+RUN mv phantomjs-2.1.1-linux-x86_64 /usr/local/share
+RUN ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
 
 # gems
 RUN mkdir -p /home/app/findshow

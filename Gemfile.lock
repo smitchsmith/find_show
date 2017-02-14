@@ -208,6 +208,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rollbar (2.14.0)
+      multi_json
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -300,6 +302,7 @@ DEPENDENCIES
   premailer-rails
   puma (~> 3.0)
   rails (~> 5.0.1)
+  rollbar
   rspec-rails
   rspotify!
   sass-rails (~> 5.0)

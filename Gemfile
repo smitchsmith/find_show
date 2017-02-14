@@ -28,6 +28,7 @@ gem 'whenever', :require => false
 gem 'oh_my_rockness', git: 'https://github.com/smitchsmith/oh_my_rockness.git'
 gem 'rspotify', git: 'https://github.com/smitchsmith/rspotify.git'
 gem 'aws-ses', :require => 'aws/ses'
+gem 'rollbar'
 
 group :development, :test do
   gem 'byebug', platform: :mri

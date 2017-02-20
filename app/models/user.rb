@@ -30,10 +30,14 @@ class User < ApplicationRecord
   end
 
   def followed_artist_events
-    Event.joins(:artist_events).where("artist_events.artist_id IN (?)", artist_ids).distinct
+    Event.joins(:artist_events).where("artist_events.artist_id IN (?)", active_artist_ids).distinct
   end
 
   private
+
+  def active_artist_ids
+    artists.active.pluck(:id)
+  end
 
   def set_hashed_id
     self.hashed_id = Digest::MD5.hexdigest(id.to_s) if hashed_id.blank?

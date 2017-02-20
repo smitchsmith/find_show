@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   devise_scope :user do
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
   end
 
   resource :current_user, :only => [:show, :edit, :update], path: "account"
+
+  resources :user_artists, only: :index do
+    put :activation, :on => :member
+  end
 
   get "welcome", :to => "welcome#show"
 end

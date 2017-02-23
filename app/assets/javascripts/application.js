@@ -14,5 +14,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
 //= require turbolinks
 //= require_tree .
+
+// enable chosen
+$(function() {
+  $('.chosen-select').chosen({
+    search_contains: true,
+    width: '200px'
+  })
+})

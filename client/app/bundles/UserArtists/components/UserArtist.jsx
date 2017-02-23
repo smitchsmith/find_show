@@ -24,7 +24,7 @@ export default class UserArtist extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className="user-artist-component">
         <label>
           {this.props.artist_name}
           <input type="checkbox" name="name" checked={this.state.active} onChange={this.handleChange}/>

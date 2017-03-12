@@ -1,0 +1,13 @@
+.DS_Store
+.dockerignore
+Dockerfile
+# .git
+# .gitignore
+
+# from .gitignore
+/log/*
+/tmp/*
+npm-debug.log*
+node_modules
+public/assets/*
+/app/assets/webpack/*

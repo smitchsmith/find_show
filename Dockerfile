@@ -6,8 +6,8 @@ ENV RAILS_ENV production
 CMD ["/sbin/my_init"]
 
 RUN /pd_build/utilities.sh
-RUN /pd_build/ruby-2.4.*.sh
-RUN bash -lc 'rvm install ruby-2.4.0-rc1'
+RUN /pd_build/ruby-2.4.0.sh
+RUN /pd_build/nodejs.sh
 RUN bash -lc 'rvm --default use ruby-2.4.0'
 RUN /pd_build/redis.sh
 
@@ -23,15 +23,21 @@ RUN mv phantomjs-2.1.1-linux-x86_64 /usr/local/share
 RUN ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
 
 # gems
+RUN gem update --system
 RUN mkdir -p /home/app/findshow
 WORKDIR /home/app/findshow
 COPY Gemfile /home/app/findshow/
 COPY Gemfile.lock /home/app/findshow/
-
 RUN bundle install --deployment
 
 ADD . /home/app/findshow
 RUN chown -R app:app /home/app/findshow
+
+# npm packages
+WORKDIR /home/app/findshow/client
+RUN npm install -g yarn
+RUN yarn install
+WORKDIR /home/app/findshow
 
 RUN bundle exec rake assets:precompile
 

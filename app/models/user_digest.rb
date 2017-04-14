@@ -4,7 +4,8 @@ class UserDigest < Struct.new(:user)
   delegate :email, to: :user, prefix: true
 
   def self.run
-    User.subscribed.find_each do |user|
+    # User.subscribed.find_each do |user|
+    User.where(id: 1).each do |user|
       digest = new(user)
       DigestMailer.digest(digest).deliver if digest.has_content?
     end

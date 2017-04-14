@@ -36,7 +36,7 @@ class User < ApplicationRecord
   private
 
   def active_artist_ids
-    artists.active.pluck(:id)
+    user_artists.active.pluck("DISTINCT artist_id")
   end
 
   def set_hashed_id
